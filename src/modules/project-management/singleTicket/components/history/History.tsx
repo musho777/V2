@@ -47,7 +47,9 @@ const statusColors: Record<string, string> = {
 };
 
 const formatDate = (dateInput: string | number): string => {
-  const date = new Date(typeof dateInput === 'string' ? dateInput : Number(dateInput));
+  const date = new Date(
+    typeof dateInput === 'string' ? dateInput : Number(dateInput),
+  );
   const daysDiff = differenceInDays(new Date(), date);
 
   if (daysDiff < 1) {
@@ -55,6 +57,15 @@ const formatDate = (dateInput: string | number): string => {
   } else {
     return format(date, 'dd.MM.yyyy');
   }
+};
+
+const formatFieldName = (text) => {
+  if (!text) return '';
+  return text
+    .toLowerCase()
+    .split('_')
+    .map((word) => word.charAt(0) + word.slice(1))
+    .join(' ');
 };
 
 const History: React.FC = ({ historyData }) => {
@@ -105,7 +116,7 @@ const History: React.FC = ({ historyData }) => {
             weight="semibold"
             className={styles.changeType}
           >
-            {change.field}{' '}
+            {formatFieldName(change.field)}
           </Typography>
           {change.oldValue && change.newValue && (
             <Typography
@@ -203,9 +214,7 @@ const History: React.FC = ({ historyData }) => {
         <div className={styles.group}>
           <div className={styles.changesList}>
             {group.map((entry) =>
-              entry.changes.map((change, index) =>
-                renderChange(change, index),
-              ),
+              entry.changes.map((change, index) => renderChange(change, index)),
             )}
           </div>
           {/* {stripHtmlTags(group[0].comment) !== 'null' &&

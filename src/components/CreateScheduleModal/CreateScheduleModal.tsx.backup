@@ -1,0 +1,417 @@
+'use client';
+
+import { useState } from 'react';
+
+import type { Dayjs } from 'dayjs';
+
+import { Button } from '@/components/Button';
+import { Input } from '@/components/Input';
+import { Modal } from '@/components/Modal';
+import { Select } from '@/components/Select';
+import { Switch } from '@/components/Switch';
+import { TimePicker } from '@/components/TimePicker';
+
+import styles from './styles.module.scss';
+
+export interface CreateScheduleFormData {
+  name: string;
+  description: string;
+  workingStatus: 'working' | 'dayOff';
+  status: boolean;
+  shiftTime?: {
+    start: string;
+    end: string;
+  };
+  breakTime?: {
+    start: string;
+    end: string;
+  };
+  nightHours?: {
+    start: string;
+    end: string;
+  };
+  outOfShiftHoursRate?: {
+    overtime: number;
+    night: number;
+    weekend: number;
+    holiday: number;
+  };
+}
+
+export interface CreateScheduleModalProps {
+  open: boolean;
+  onClose: () => void;
+  onSubmit?: (data: CreateScheduleFormData) => void;
+  initialData?: Partial<CreateScheduleFormData>;
+  mode?: 'create' | 'edit';
+}
+
+const workingStatusOptions = [
+  { value: 'working', label: 'Working' },
+  { value: 'dayOff', label: 'Day off' },
+];
+
+export const CreateScheduleModal: React.FC<CreateScheduleModalProps> = ({
+  open,
+  onClose,
+  onSubmit,
+  initialData,
+  mode = 'create',
+}) => {
+  const [currentStep, setCurrentStep] = useState(1);
+  const [formData, setFormData] = useState<CreateScheduleFormData>({
+    name: initialData?.name || '',
+    description: initialData?.description || '',
+    workingStatus: initialData?.workingStatus || 'dayOff',
+    status: initialData?.status ?? true,
+    shiftTime: initialData?.shiftTime || { start: '', end: '' },
+    breakTime: initialData?.breakTime || { start: '', end: '' },
+    nightHours: initialData?.nightHours || { start: '', end: '' },
+    outOfShiftHoursRate: initialData?.outOfShiftHoursRate || {
+      overtime: 0,
+      night: 0,
+      weekend: 0,
+      holiday: 0,
+    },
+  });
+
+  const handleClose = () => {
+    setCurrentStep(1);
+    setFormData({
+      name: '',
+      description: '',
+      workingStatus: 'dayOff',
+      status: true,
+      shiftTime: { start: '', end: '' },
+      breakTime: { start: '', end: '' },
+      nightHours: { start: '', end: '' },
+      outOfShiftHoursRate: {
+        overtime: 0,
+        night: 0,
+        weekend: 0,
+        holiday: 0,
+      },
+    });
+    onClose();
+  };
+
+  const handleNext = () => {
+    setCurrentStep(2);
+  };
+
+  const handleBack = () => {
+    setCurrentStep(1);
+  };
+
+  const handleSubmit = () => {
+    onSubmit?.(formData);
+    handleClose();
+  };
+
+  const updateFormData = <K extends keyof CreateScheduleFormData>(
+    field: K,
+    value: CreateScheduleFormData[K],
+  ) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const updateNestedFormData = <T extends keyof CreateScheduleFormData>(
+    parent: T,
+    field: string,
+    value: string | number,
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [parent]: {
+        ...(prev[parent] as object),
+        [field]: value,
+      },
+    }));
+  };
+
+  const isStep1Valid = formData.name && formData.description;
+
+  return (
+    <Modal open={open} onCancel={handleClose} showFooter={false} width={474}>
+      {currentStep === 1 ? (
+        <div>
+          <div className={styles.modalHeader}>
+            <h2 className={styles.modalTitle}>Create schedule</h2>
+          </div>
+
+          <div className={styles.modalForm}>
+            <Input
+              label={
+                <>
+                  Schedule name <span style={{ color: '#e63946' }}>*</span>
+                </>
+              }
+              value={formData.name}
+              onChange={(e) => updateFormData('name', e.target.value)}
+              placeholder="Enter schedule name"
+              width="100%"
+              maxLength={50}
+            />
+            <p className={styles.characterCount}>0-50 characters</p>
+
+            <Input
+              label={
+                <>
+                  Description <span style={{ color: '#e63946' }}>*</span>
+                </>
+              }
+              value={formData.description}
+              onChange={(e) => updateFormData('description', e.target.value)}
+              placeholder="Enter schedule name"
+              width="100%"
+              maxLength={250}
+            />
+            <p className={styles.characterCount}>0-250 characters</p>
+
+            <Select
+              label={
+                <>
+                  Working status <span style={{ color: '#e63946' }}>*</span>
+                </>
+              }
+              placeholder="Day off"
+              options={workingStatusOptions}
+              value={formData.workingStatus}
+              onChange={(value) =>
+                updateFormData('workingStatus', value as 'working' | 'dayOff')
+              }
+              width="100%"
+            />
+
+            <div className={styles.switchContainer}>
+              <Switch
+                label="Schedule status"
+                checked={formData.status}
+                onChange={(checked) => updateFormData('status', checked)}
+              />
+            </div>
+          </div>
+
+          <div className={styles.modalFooter}>
+            <Button
+              buttonType="primary"
+              onClick={handleClose}
+              className={styles.modalButton}
+            >
+              Cancel
+            </Button>
+            <Button
+              buttonType="action"
+              onClick={handleNext}
+              className={styles.modalButton}
+              disabled={!isStep1Valid}
+            >
+              {mode === 'edit' ? 'Save' : 'Next'}
+            </Button>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div className={styles.modalHeader}>
+            <h2 className={styles.modalTitle}>Create schedule</h2>
+          </div>
+
+          <div className={styles.modalForm}>
+            <div className={styles.timeSection}>
+              <p className={styles.sectionLabel}>Shift time</p>
+              <div className={styles.timeRow}>
+                <TimePicker
+                  value={
+                    formData.shiftTime?.start
+                      ? (formData.shiftTime.start as unknown as Dayjs)
+                      : undefined
+                  }
+                  onChange={(time) =>
+                    updateNestedFormData(
+                      'shiftTime',
+                      'start',
+                      time ? time.format('HH:mm') : '',
+                    )
+                  }
+                  placeholder="10:00"
+                  width="48%"
+                />
+                <TimePicker
+                  value={
+                    formData.shiftTime?.end
+                      ? (formData.shiftTime.end as unknown as Dayjs)
+                      : undefined
+                  }
+                  onChange={(time) =>
+                    updateNestedFormData(
+                      'shiftTime',
+                      'end',
+                      time ? time.format('HH:mm') : '',
+                    )
+                  }
+                  placeholder="19:00"
+                  width="48%"
+                />
+              </div>
+            </div>
+
+            <div className={styles.timeSection}>
+              <p className={styles.sectionLabel}>Break time</p>
+              <div className={styles.timeRow}>
+                <TimePicker
+                  value={
+                    formData.breakTime?.start
+                      ? (formData.breakTime.start as unknown as Dayjs)
+                      : undefined
+                  }
+                  onChange={(time) =>
+                    updateNestedFormData(
+                      'breakTime',
+                      'start',
+                      time ? time.format('HH:mm') : '',
+                    )
+                  }
+                  placeholder="13:00"
+                  width="48%"
+                />
+                <TimePicker
+                  value={
+                    formData.breakTime?.end
+                      ? (formData.breakTime.end as unknown as Dayjs)
+                      : undefined
+                  }
+                  onChange={(time) =>
+                    updateNestedFormData(
+                      'breakTime',
+                      'end',
+                      time ? time.format('HH:mm') : '',
+                    )
+                  }
+                  placeholder="14:00"
+                  width="48%"
+                />
+              </div>
+            </div>
+
+            <div className={styles.timeSection}>
+              <p className={styles.sectionLabel}>Night hours</p>
+              <div className={styles.timeRow}>
+                <TimePicker
+                  value={
+                    formData.nightHours?.start
+                      ? (formData.nightHours.start as unknown as Dayjs)
+                      : undefined
+                  }
+                  onChange={(time) =>
+                    updateNestedFormData(
+                      'nightHours',
+                      'start',
+                      time ? time.format('HH:mm') : '',
+                    )
+                  }
+                  placeholder="00:00"
+                  width="48%"
+                />
+                <TimePicker
+                  value={
+                    formData.nightHours?.end
+                      ? (formData.nightHours.end as unknown as Dayjs)
+                      : undefined
+                  }
+                  onChange={(time) =>
+                    updateNestedFormData(
+                      'nightHours',
+                      'end',
+                      time ? time.format('HH:mm') : '',
+                    )
+                  }
+                  placeholder="06:00"
+                  width="48%"
+                />
+              </div>
+            </div>
+
+            <div className={styles.rateSection}>
+              <p className={styles.sectionLabel}>Out of shift hours Rate</p>
+              <div className={styles.rateGrid}>
+                <Input
+                  label="Overtime"
+                  value={String(formData.outOfShiftHoursRate?.overtime || '')}
+                  onChange={(e) =>
+                    updateNestedFormData(
+                      'outOfShiftHoursRate',
+                      'overtime',
+                      Number(e.target.value) || 0,
+                    )
+                  }
+                  placeholder="1"
+                  width="100%"
+                  type="number"
+                />
+                <Input
+                  label="Night"
+                  value={String(formData.outOfShiftHoursRate?.night || '')}
+                  onChange={(e) =>
+                    updateNestedFormData(
+                      'outOfShiftHoursRate',
+                      'night',
+                      Number(e.target.value) || 0,
+                    )
+                  }
+                  placeholder="0.00"
+                  width="100%"
+                  type="number"
+                />
+                <Input
+                  label="Weekend"
+                  value={String(formData.outOfShiftHoursRate?.weekend || '')}
+                  onChange={(e) =>
+                    updateNestedFormData(
+                      'outOfShiftHoursRate',
+                      'weekend',
+                      Number(e.target.value) || 0,
+                    )
+                  }
+                  placeholder="0.00"
+                  width="100%"
+                  type="number"
+                />
+                <Input
+                  label="Holiday"
+                  value={String(formData.outOfShiftHoursRate?.holiday || '')}
+                  onChange={(e) =>
+                    updateNestedFormData(
+                      'outOfShiftHoursRate',
+                      'holiday',
+                      Number(e.target.value) || 0,
+                    )
+                  }
+                  placeholder="0.00"
+                  width="100%"
+                  type="number"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.modalFooter}>
+            <Button
+              buttonType="primary"
+              onClick={handleBack}
+              className={styles.modalButton}
+            >
+              Cancel
+            </Button>
+            <Button
+              buttonType="action"
+              onClick={handleSubmit}
+              className={styles.modalButton}
+            >
+              Save Schedule
+            </Button>
+          </div>
+        </div>
+      )}
+    </Modal>
+  );
+};

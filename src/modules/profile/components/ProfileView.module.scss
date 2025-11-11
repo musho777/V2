@@ -1,0 +1,35 @@
+.profileContainer {
+  width: 100%;
+}
+
+.profileLayout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  :global(.ant-card-body) {
+    padding: 12px !important;
+  }
+}
+
+.sidebar {
+  position: sticky;
+  height: fit-content;
+}
+
+@media (max-width: 1200px) {
+  .profileLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+}

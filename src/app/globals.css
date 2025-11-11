@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Button Colors */
+  --btn-primary: rgba(29, 53, 87, 1);
+  --btn-primary-hover: rgba(44, 74, 114, 1);
+  --btn-primary-active: rgba(28, 47, 73, 1);
+
+  --btn-action: rgba(45, 108, 223, 1);
+  --btn-action-hover: rgba(44, 74, 114, 1);
+  --btn-action-active: rgba(29, 53, 87, 1);
+
+  --btn-warning: rgba(244, 162, 97, 1);
+  --btn-error: rgba(230, 57, 70, 1);
+  --btn-success: rgba(21, 199, 167, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent layout shift from Ant Design */
+.ant-layout {
+  min-height: 100vh;
+}
+
+.ant-layout-sider {
+  flex: 0 0 200px !important;
+  max-width: 200px !important;
+  min-width: 200px !important;
+  width: 200px !important;
+}
+
+.ant-layout-sider-collapsed {
+  flex: 0 0 80px !important;
+  max-width: 80px !important;
+  min-width: 80px !important;
+  width: 80px !important;
+}

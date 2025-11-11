@@ -1,0 +1,93 @@
+.pageContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pageTitle {
+  width: 96%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.contentWrapper {
+  width: 96%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.filterSection {
+  margin-top: 30px;
+}
+
+.tableSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  min-height: 0;
+}
+
+.tableContainer {
+  border: 1px solid rgba(223, 223, 223, 1);
+  border-top: 1px solid rgba(223, 223, 223, 1);
+  width: 100%;
+  height: 100%;
+}
+
+.errorMessage {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}
+
+// Modal styles
+.modalHeader {
+  margin-bottom: 32px;
+}
+
+.modalTitle {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgba(33, 37, 41, 1);
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.modalSubtitle {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(108, 117, 125, 1);
+  margin: 0;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modalRow {
+  display: flex;
+  gap: 16px;
+}
+
+.modalFooter {
+  display: flex;
+  gap: 12px;
+  margin-top: 0;
+  padding-top: 24px;
+}
+
+.modalButton {
+  width: 50%;
+  min-height: 44px;
+}

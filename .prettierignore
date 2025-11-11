@@ -1,0 +1,35 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build outputs
+.next
+out
+build
+dist
+.vercel
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+
+# Testing
+coverage
+
+# Config files that should not be formatted
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+tsconfig.tsbuildinfo
+
+# Next.js
+next-env.d.ts

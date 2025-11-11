@@ -1,0 +1,70 @@
+/* Global styles for Select dropdown/popup */
+
+/* Dropdown menu styling */
+.ant-select-dropdown {
+  border-radius: 10px !important;
+  padding: 8px 4px !important;
+}
+
+/* Select item styling */
+.ant-select-dropdown .ant-select-item {
+  font-family: Nunito, sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  line-height: 100% !important;
+  letter-spacing: 0% !important;
+  color: rgba(33, 37, 41, 1) !important;
+  padding: 8px 10px !important;
+  border-radius: 5px !important;
+  margin: 2px 0 !important;
+  transition: all 0.2s !important;
+}
+
+/* Select item hover state */
+.ant-select-dropdown .ant-select-item:hover,
+.ant-select-dropdown .ant-select-item-option-active {
+  background-color: rgba(45, 108, 223, 0.1) !important;
+  color: rgba(45, 108, 223, 1) !important;
+}
+
+/* Selected item */
+.ant-select-dropdown .ant-select-item-option-selected {
+  background-color: rgba(45, 108, 223, 0.1) !important;
+  color: rgba(45, 108, 223, 1) !important;
+  font-weight: 600 !important;
+}
+
+/* Disabled item */
+.ant-select-dropdown .ant-select-item-option-disabled {
+  color: rgba(33, 37, 41, 0.3) !important;
+  cursor: not-allowed !important;
+}
+
+/* Empty state */
+.ant-select-dropdown .ant-select-item-empty {
+  color: rgba(33, 37, 41, 0.5) !important;
+  font-family: Nunito, sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+}
+
+/* Placeholder color */
+.ant-select-selection-placeholder {
+  color: rgba(33, 37, 41, 1) !important;
+}
+
+/* Multiple select placeholder alignment */
+.ant-select-multiple .ant-select-selection-placeholder {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Multiple select search alignment */
+.ant-select-multiple .ant-select-selection-search {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Multiple select overflow margin */
+.ant-select-selection-overflow {
+}

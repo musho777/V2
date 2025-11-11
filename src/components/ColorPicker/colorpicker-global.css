@@ -1,0 +1,27 @@
+.ant-color-picker-panel {
+  border-radius: 8px;
+}
+
+.ant-color-picker-inner-panel {
+  border-radius: 8px;
+}
+
+.ant-color-picker-trigger {
+  cursor: pointer;
+  border: none !important;
+  box-shadow: none !important;
+  justify-content: start;
+}
+
+.ant-color-picker-trigger:hover,
+.ant-color-picker-trigger:focus,
+.ant-color-picker-trigger:active,
+.ant-color-picker-trigger.ant-color-picker-trigger-active {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Color picker circle handle */
+.ant-color-picker-handler {
+  border-radius: 50% !important;
+}

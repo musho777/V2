@@ -1,0 +1,27 @@
+.timePickerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary, #000);
+    text-align: left;
+  }
+
+  .timePicker {
+    border-radius: 8px;
+    transition: all 0.2s;
+
+    &:hover {
+      border-color: var(--primary-color, #1677ff);
+    }
+
+    &:focus,
+    &:focus-within {
+      border-color: var(--primary-color, #1677ff);
+      box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.1);
+    }
+  }
+}

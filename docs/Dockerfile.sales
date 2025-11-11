@@ -1,0 +1,53 @@
+# Dockerfile for Sales Module (Example of isolated module)
+FROM node:18-alpine AS deps
+WORKDIR /app
+
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
+
+FROM node:18-alpine AS builder
+WORKDIR /app
+
+COPY --from=deps /app/node_modules ./node_modules
+
+# Copy only sales module and dependencies
+COPY src/modules/sales ./src/modules/sales
+COPY src/components ./src/components
+COPY src/types ./src/types
+COPY src/hooks ./src/hooks
+COPY src/contexts ./src/contexts
+COPY src/config ./src/config
+COPY src/services ./src/services
+COPY src/utils ./src/utils
+COPY src/app/sales ./src/app/sales
+
+# Copy other necessary files
+COPY tsconfig.json ./
+COPY next.config.js ./
+COPY tailwind.config.ts ./
+COPY postcss.config.mjs ./
+
+# Build only sales module
+ENV NEXT_PUBLIC_MODULE=sales
+RUN yarn build
+
+FROM node:18-alpine AS runner
+WORKDIR /app
+
+ENV NODE_ENV production
+ENV NEXT_PUBLIC_MODULE sales
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
+USER nextjs
+
+EXPOSE 3002
+
+ENV PORT 3002
+
+CMD ["node", "server.js"]

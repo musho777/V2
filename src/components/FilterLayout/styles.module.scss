@@ -1,0 +1,71 @@
+.filterLayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  padding: 0 24px;
+  box-sizing: border-box;
+  background-color: white;
+
+  .leftSection {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+  }
+
+  .rightSection {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .tabsContainer {
+    display: flex;
+    gap: 0;
+    background-color: rgba(233, 233, 233, 0.6);
+    border-radius: 5px;
+    padding: 5px;
+
+    .tab {
+      padding: 8px 12px;
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-radius: 3px;
+
+      &.active {
+        background-color: white;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.searchSection {
+  border: none;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.searchButton {
+  &:hover:not(:disabled),
+  &:active:not(:disabled),
+  &:focus {
+    background: white !important;
+    border-color: rgba(212, 216, 221, 1) !important;
+  }
+}

@@ -1,0 +1,91 @@
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 400px;
+  padding: 20px 0;
+}
+
+.filtersRow {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 24px;
+}
+
+.emptyState {
+  text-align: center;
+  color: rgba(108, 117, 125, 1);
+  font-size: 16px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.createButton {
+  margin-bottom: 24px;
+}
+
+.countriesGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.countryCard {
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.countryCardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.countryName {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.countryActions {
+  display: flex;
+  gap: 16px;
+}
+
+.actionIcon {
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: rgba(45, 108, 223, 1);
+  }
+}
+
+.resetButton {
+  margin-bottom: 4px;
+  height: 48px;
+}
+
+.errorMessage {
+  color: #ff4d4f;
+  font-size: 14px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 4px;
+}

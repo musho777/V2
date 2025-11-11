@@ -1,0 +1,24 @@
+.colorPickerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary, #000);
+    text-align: left;
+  }
+
+  .colorPicker {
+    :global(.ant-color-picker-trigger) {
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #d9d9d9);
+      transition: all 0.2s;
+
+      &:hover {
+        border-color: var(--primary-color, #1677ff);
+      }
+    }
+  }
+}

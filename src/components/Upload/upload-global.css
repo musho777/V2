@@ -1,0 +1,15 @@
+.ant-upload-wrapper {
+  width: 100%;
+}
+
+.ant-upload {
+  border-radius: 8px;
+}
+
+.ant-upload-list-item {
+  border-radius: 8px;
+}
+
+.ant-upload-list-item-container {
+  border-radius: 8px;
+}

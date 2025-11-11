@@ -1,0 +1,35 @@
+/* Global styles for Switch component */
+
+.ant-switch {
+  height: 20px !important;
+  min-width: 37px !important;
+  line-height: 20px !important;
+}
+
+.ant-switch .ant-switch-handle {
+  width: 14px !important;
+  height: 14px !important;
+  top: 3px !important;
+}
+
+.ant-switch-checked .ant-switch-handle {
+  inset-inline-start: calc(100% - 17px) !important;
+}
+
+.ant-switch-checked {
+  background: rgba(45, 108, 223, 1) !important;
+}
+
+.ant-switch:hover:not(.ant-switch-disabled) {
+  background: rgba(0, 0, 0, 0.45) !important;
+}
+
+.ant-switch-checked:hover:not(.ant-switch-disabled) {
+  background: rgba(45, 108, 223, 0.8) !important;
+}
+
+/* Switch wrapper alignment */
+.ant-switch-wrapper {
+  display: flex !important;
+  align-items: center !important;
+}

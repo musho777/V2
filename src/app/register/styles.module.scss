@@ -1,0 +1,58 @@
+.registerForm {
+  width: 390px;
+}
+
+.registerTitle {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(33, 37, 41, 1);
+  margin-bottom: 20px;
+}
+
+.registerSubtitle {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 175%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(108, 117, 125, 1);
+  margin-bottom: 32px;
+}
+
+.form {
+  width: 100%;
+}
+
+.formGroup {
+  margin-bottom: 24px;
+}
+
+.errorText {
+  display: block;
+  color: rgba(230, 57, 70, 1);
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.backToLogin {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(29, 53, 87, 1);
+  cursor: pointer;
+}

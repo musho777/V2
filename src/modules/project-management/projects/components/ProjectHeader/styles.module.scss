@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.allTicketCount {
+  display: flex;
+  width: 266px;
+  height: 44px;
+  justify-content: space-between;
+  border: none;
+  border-left: 3px solid #2d6cdf;
+  border-radius: 10px;
+  align-items: center;
+  background: #fff;
+  padding: 13px 20px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  color: #212529;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}

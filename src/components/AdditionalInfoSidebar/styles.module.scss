@@ -1,0 +1,47 @@
+.sidebar {
+  border-radius: 8px;
+  border: 0.4px solid rgba(212, 216, 221, 0.5);
+  padding: 30px;
+  height: fit-content;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.divider {
+  height: 1px;
+  background: #d4d8dd;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6c757d;
+  line-height: normal;
+}
+
+.value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #212529;
+  line-height: normal;
+}

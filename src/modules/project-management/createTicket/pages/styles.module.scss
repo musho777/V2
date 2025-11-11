@@ -1,0 +1,60 @@
+$color-open: #1d3557;
+$color-closed: #2d6cdf;
+
+.myElement {
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 24px 0;
+  width: fit-content;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &.open {
+    color: $color-open;
+  }
+
+  &.closed {
+    color: $color-closed;
+  }
+}
+
+.button200 {
+  width: 200px;
+}
+
+.columnContainer {
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: end;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.fieldLabel {
+  font-family: Nunito, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 100%;
+  color: rgba(33, 37, 41, 1);
+  text-align: left;
+}
+
+.timeUnit {
+  color: #6c757d;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+:global(.ant-collapse-content-box) {
+  padding: 0 !important;
+}

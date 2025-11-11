@@ -1,0 +1,139 @@
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-family: Nunito, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(33, 37, 41, 1);
+  text-align: left;
+}
+
+.input {
+  border-radius: 8px !important;
+  border: 1px solid rgba(212, 216, 221, 1) !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  background: white !important;
+
+  font-family: Nunito, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(33, 37, 41, 1);
+
+  &::placeholder {
+    font-family: Nunito, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: rgba(212, 216, 221, 1);
+  }
+
+  &:focus,
+  &:focus-within {
+    outline: none !important;
+    border-color: rgba(21, 199, 167, 0.5) !important;
+  }
+
+  &.ant-input-status-error {
+    border-color: rgba(230, 57, 70, 1) !important;
+
+    &:focus,
+    &:focus-within {
+      border-color: rgba(230, 57, 70, 1) !important;
+    }
+  }
+
+  input {
+    background-color: white !important;
+    background: white !important;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: rgba(33, 37, 41, 1) !important;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    box-shadow: 0 0 0 1000px white inset !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+    background-color: white !important;
+    caret-color: rgba(33, 37, 41, 1) !important;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-text-fill-color: rgba(33, 37, 41, 1) !important;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    box-shadow: 0 0 0 1000px white inset !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+    background-color: white !important;
+    caret-color: rgba(33, 37, 41, 1) !important;
+  }
+
+  :global(.ant-input) {
+    background-color: white !important;
+    background: white !important;
+  }
+
+  :global(.ant-input-affix-wrapper) {
+    background-color: white !important;
+    background: white !important;
+
+    input {
+      background-color: white !important;
+      background: white !important;
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-text-fill-color: rgba(33, 37, 41, 1) !important;
+        -webkit-box-shadow: 0 0 0 1000px white inset !important;
+        box-shadow: 0 0 0 1000px white inset !important;
+        transition: background-color 5000s ease-in-out 0s !important;
+        background-color: white !important;
+        caret-color: rgba(33, 37, 41, 1) !important;
+      }
+    }
+  }
+}
+
+.searchIconWrapper {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  border-left: 1px solid rgba(212, 216, 221, 1);
+  height: 100%;
+}
+
+.eyeIconWrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+}
+
+.error {
+  font-family: Nunito, sans-serif;
+  color: #e63946;
+  font-weight: 600;
+  padding: 3px 0 2px 0;
+  display: flex;
+  gap: 3px;
+  justify-content: start;
+  font-size: 12px;
+  line-height: 12px;
+}

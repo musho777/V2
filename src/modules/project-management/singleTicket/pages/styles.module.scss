@@ -1,0 +1,119 @@
+.history {
+  border-radius: 10px;
+  border: 0.4px solid rgba(212, 216, 221, 0.5);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 100vh;
+  height: 100%;
+  padding: 20px 0;
+
+  @media screen and (min-width: 1400px) {
+    width: 600px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+  }
+}
+
+.content {
+  border-radius: 10px;
+  border: 0.4px solid rgba(212, 216, 221, 0.5);
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    color: red;
+  }
+}
+
+.detailsRow {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.headerContent {
+  display: flex;
+  gap: 15px;
+  border-top: 0.4px solid rgba(212, 216, 221, 0.5);
+  padding-top: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.fieldItemInfo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100px;
+}
+
+.fieldItemRow {
+  display: flex;
+  gap: 20px;
+}
+
+.columnInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 25px;
+}
+
+.commentArea {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  border-radius: 20px;
+  border: 1px solid #d4d8dd;
+  background: #fbfcff;
+  width: 100%;
+  padding: 20px;
+
+  color: #212529;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px; /* 150% */
+}
+
+.columnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.attachmentsHeader {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.attachments {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,56 @@
+.container {
+  padding: 24px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.idCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.parentIcon {
+  font-size: 14px;
+}
+
+.clickableTitle {
+  color: #212529;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.progressRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressText {
+  font-size: 11px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.editIcon {
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}

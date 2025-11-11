@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+}
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.method {
+  color: rgb(45, 108, 223);
+  font-size: 14px;
+  font-weight: 600;
+  width: 150px;
+  min-width: 120px;
+  border-radius: 10px;
+  background: rgba(45, 108, 223, 0.1);
+  display: flex;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.phoneInput {
+  margin-top: 4px;
+  flex: 1;
+  width: 100%;
+}
+
+.inputWrapper {
+  width: 100%;
+
+  input {
+    width: 100% !important;
+  }
+}

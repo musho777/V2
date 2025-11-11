@@ -1,0 +1,66 @@
+.forgotPasswordForm {
+  width: 390px;
+}
+
+.title {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(33, 37, 41, 1);
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 175%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: rgba(108, 117, 125, 1);
+  margin-bottom: 32px;
+}
+
+.form {
+  width: 100%;
+}
+
+.formGroup {
+  margin-bottom: 24px;
+}
+
+.errorText {
+  display: block;
+  color: #f5222d;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.generalError {
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+  color: #f5222d;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.backToLogin {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(29, 53, 87, 1);
+  cursor: pointer;
+}

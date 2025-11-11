@@ -1,0 +1,154 @@
+.legalEntityDetailsPage {
+  padding: 24px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.pageWrapper {
+  width: 100%;
+}
+
+.cardHeader {
+  text-align: start;
+  margin-bottom: 24px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: rgba(29, 53, 87, 1);
+    line-height: 100%;
+  }
+
+  p {
+    font-size: 16px;
+    color: rgba(108, 117, 125, 1);
+    margin: 0;
+  }
+}
+
+.formContainer {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formRow {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.formRowFour {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+
+  :global(.ant-input),
+  :global(input) {
+    padding-right: 40px;
+  }
+}
+
+.editIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  flex-shrink: 0;
+  z-index: 10;
+  pointer-events: all;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.serviceAddressSection {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    color: rgba(29, 53, 87, 1);
+  }
+}
+
+.addressForm {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+
+  h4 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: rgba(29, 53, 87, 1);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.phoneSection {
+  margin: 16px 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.phoneForm {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+
+  h4 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    color: rgba(29, 53, 87, 1);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.birthdaySection {
+  margin: 24px 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}

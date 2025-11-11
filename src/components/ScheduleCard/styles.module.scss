@@ -1,0 +1,98 @@
+.card {
+  background: #ffffff;
+  border-left: 3px solid #ff6a00;
+  border-radius: 10px;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.cardHeader {
+  padding: 20px;
+}
+
+.cardTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #212529;
+  margin: 0;
+}
+
+.cardDivider {
+  height: 1px;
+  background-color: #d4d8dd;
+  margin: 0 20px;
+}
+
+.cardBody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.infoRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.label {
+  font-weight: 400;
+  color: #6c757d;
+  flex-shrink: 0;
+}
+
+.value {
+  font-weight: 600;
+  color: #212529;
+  flex: 1;
+}
+
+.cardFooter {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.actionButton {
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  &:active {
+    background-color: #e0e0e0;
+  }
+}
+
+.icon {
+  font-size: 18px;
+  color: #6c757d;
+}

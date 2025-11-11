@@ -1,0 +1,409 @@
+.button {
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s;
+  min-height: 44px;
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  // Default button
+  &:global(.ant-btn-color-default) {
+    color: rgba(200, 200, 200, 1) !important;
+  }
+
+  // Primary button
+  &:global(.ant-btn-primary) {
+    background: var(--btn-primary) !important;
+    border-color: var(--btn-primary) !important;
+    color: white !important;
+
+    &:hover:not(:disabled) {
+      background: var(--btn-primary-hover) !important;
+      border-color: var(--btn-primary-hover) !important;
+    }
+
+    &:active:not(:disabled) {
+      background: var(--btn-primary-active) !important;
+      border-color: var(--btn-primary-active) !important;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+
+  // Action button
+  &:global(.ant-btn-action) {
+    background: var(--btn-action) !important;
+    border-color: var(--btn-action) !important;
+    color: white !important;
+
+    &:hover:not(:disabled) {
+      background: var(--btn-action-hover) !important;
+      border-color: var(--btn-action-hover) !important;
+    }
+
+    &:active:not(:disabled) {
+      background: var(--btn-action-active) !important;
+      border-color: var(--btn-action-active) !important;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+
+  // Warning button
+  &:global(.ant-btn-warning) {
+    background: var(--btn-warning) !important;
+    border-color: var(--btn-warning) !important;
+    color: white !important;
+
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+
+  // Error button
+  &:global(.ant-btn-error) {
+    background: var(--btn-error) !important;
+    border-color: var(--btn-error) !important;
+    color: white !important;
+
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+
+  // Success button
+  &:global(.ant-btn-success) {
+    background: var(--btn-success) !important;
+    border-color: var(--btn-success) !important;
+    color: white !important;
+
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+
+  // Default White button
+  &:global(.ant-btn-defaultWhite) {
+    background: white !important;
+    border-color: rgba(212, 216, 221, 1) !important;
+    font-family: 'Nunito', sans-serif !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
+    font-size: 12px !important;
+    line-height: 100% !important;
+    letter-spacing: 0% !important;
+    color: rgba(33, 37, 41, 1) !important;
+
+    &:hover:not(:disabled),
+    &:active:not(:disabled),
+    &:focus {
+      background: white !important;
+      border-color: rgba(212, 216, 221, 1) !important;
+      color: rgba(33, 37, 41, 1) !important;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+}
+
+// Variant styles - override button type styles
+.dashed {
+  background: transparent !important;
+  border-style: dashed !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  color: rgba(0, 0, 0, 0.88) !important;
+
+  &:hover:not(:disabled),
+  &:active:not(:disabled),
+  &:focus {
+    background: transparent !important;
+  }
+}
+
+// Primary with dashed variant
+:global(.ant-btn-primary).dashed {
+  color: var(--btn-primary) !important;
+  border-color: var(--btn-primary) !important;
+  background: transparent !important;
+
+  &:hover:not(:disabled) {
+    color: var(--btn-primary-hover) !important;
+    border-color: var(--btn-primary-hover) !important;
+    background: transparent !important;
+  }
+
+  &:active:not(:disabled) {
+    color: var(--btn-primary-active) !important;
+    border-color: var(--btn-primary-active) !important;
+    background: transparent !important;
+  }
+}
+
+// Action with dashed variant
+:global(.ant-btn-action).dashed {
+  color: var(--btn-action) !important;
+  border-color: var(--btn-action) !important;
+  background: transparent !important;
+
+  &:hover:not(:disabled) {
+    color: var(--btn-action-hover) !important;
+    border-color: var(--btn-action-hover) !important;
+    background: transparent !important;
+  }
+
+  &:active:not(:disabled) {
+    color: var(--btn-action-active) !important;
+    border-color: var(--btn-action-active) !important;
+    background: transparent !important;
+  }
+}
+
+// Warning with dashed variant
+:global(.ant-btn-warning).dashed {
+  color: var(--btn-warning) !important;
+  border-color: var(--btn-warning) !important;
+  background: transparent !important;
+}
+
+// Error with dashed variant
+:global(.ant-btn-error).dashed {
+  color: var(--btn-error) !important;
+  border-color: var(--btn-error) !important;
+  background: transparent !important;
+}
+
+// Success with dashed variant
+:global(.ant-btn-success).dashed {
+  color: var(--btn-success) !important;
+  border-color: var(--btn-success) !important;
+  background: transparent !important;
+}
+
+.outlined {
+  background: transparent !important;
+  border-style: solid !important;
+  border-color: #d9d9d9 !important;
+  color: rgba(0, 0, 0, 0.88) !important;
+
+  &:hover:not(:disabled),
+  &:active:not(:disabled),
+  &:focus {
+    background: transparent !important;
+    border-color: #d9d9d9 !important;
+  }
+}
+
+// Primary with outlined variant
+:global(.ant-btn-primary).outlined {
+  color: var(--btn-primary) !important;
+  border-color: var(--btn-primary) !important;
+  background: transparent !important;
+
+  &:hover:not(:disabled) {
+    color: var(--btn-primary-hover) !important;
+    border-color: var(--btn-primary-hover) !important;
+    background: transparent !important;
+  }
+
+  &:active:not(:disabled) {
+    color: var(--btn-primary-active) !important;
+    border-color: var(--btn-primary-active) !important;
+    background: transparent !important;
+  }
+}
+
+// Action with outlined variant
+:global(.ant-btn-action).outlined {
+  color: var(--btn-action) !important;
+  border-color: var(--btn-action) !important;
+  background: transparent !important;
+
+  &:hover:not(:disabled) {
+    color: var(--btn-action-hover) !important;
+    border-color: var(--btn-action-hover) !important;
+    background: transparent !important;
+  }
+
+  &:active:not(:disabled) {
+    color: var(--btn-action-active) !important;
+    border-color: var(--btn-action-active) !important;
+    background: transparent !important;
+  }
+}
+
+// Warning with outlined variant
+:global(.ant-btn-warning).outlined {
+  color: var(--btn-warning) !important;
+  border-color: var(--btn-warning) !important;
+  background: transparent !important;
+}
+
+// Error with outlined variant
+:global(.ant-btn-error).outlined {
+  color: var(--btn-error) !important;
+  border-color: var(--btn-error) !important;
+  background: transparent !important;
+}
+
+// Success with outlined variant
+:global(.ant-btn-success).outlined {
+  color: var(--btn-success) !important;
+  border-color: var(--btn-success) !important;
+  background: transparent !important;
+}
+
+.text {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  color: rgba(0, 0, 0, 0.88) !important;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+}
+
+// Primary with text variant
+:global(.ant-btn-primary).text {
+  color: var(--btn-primary) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+
+  &:hover:not(:disabled) {
+    color: var(--btn-primary-hover) !important;
+    background: transparent !important;
+    border-color: transparent !important;
+  }
+
+  &:active:not(:disabled) {
+    color: var(--btn-primary-active) !important;
+    background: transparent !important;
+    border-color: transparent !important;
+  }
+}
+
+// Action with text variant
+:global(.ant-btn-action).text {
+  color: var(--btn-action) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+
+  &:hover:not(:disabled) {
+    color: var(--btn-action-hover) !important;
+    background: transparent !important;
+    border-color: transparent !important;
+  }
+
+  &:active:not(:disabled) {
+    color: var(--btn-action-active) !important;
+    background: transparent !important;
+    border-color: transparent !important;
+  }
+}
+
+// Warning with text variant
+:global(.ant-btn-warning).text {
+  color: var(--btn-warning) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+// Error with text variant
+:global(.ant-btn-error).text {
+  color: var(--btn-error) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+// Success with text variant
+:global(.ant-btn-success).text {
+  color: var(--btn-success) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+.link {
+  background: transparent !important;
+  border-color: transparent !important;
+  text-decoration: underline !important;
+  box-shadow: none !important;
+  color: rgba(0, 0, 0, 0.88) !important;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+}
+
+// Primary with link variant
+:global(.ant-btn-primary).link {
+  color: var(--btn-primary) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+
+  &:hover:not(:disabled) {
+    color: var(--btn-primary-hover) !important;
+    background: transparent !important;
+    border-color: transparent !important;
+  }
+
+  &:active:not(:disabled) {
+    color: var(--btn-primary-active) !important;
+    background: transparent !important;
+    border-color: transparent !important;
+  }
+}
+
+// Action with link variant
+:global(.ant-btn-action).link {
+  color: var(--btn-action) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+
+  &:hover:not(:disabled) {
+    color: var(--btn-action-hover) !important;
+    background: transparent !important;
+    border-color: transparent !important;
+  }
+
+  &:active:not(:disabled) {
+    color: var(--btn-action-active) !important;
+    background: transparent !important;
+    border-color: transparent !important;
+  }
+}
+
+// Warning with link variant
+:global(.ant-btn-warning).link {
+  color: var(--btn-warning) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+// Error with link variant
+:global(.ant-btn-error).link {
+  color: var(--btn-error) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+// Success with link variant
+:global(.ant-btn-success).link {
+  color: var(--btn-success) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+}

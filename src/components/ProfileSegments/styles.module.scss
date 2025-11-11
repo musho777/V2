@@ -1,0 +1,357 @@
+.segmentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.segment {
+  border-radius: 10px;
+  border: 0.4px solid rgba(212, 216, 221, 0.5);
+  padding: 24px 30px;
+}
+
+.segmentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.segmentTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #212529;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.editButton {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border-color: #d4d8dd;
+
+  :global(.anticon) {
+    font-size: 14px;
+  }
+}
+
+.editText {
+  color: #2d6cdf;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.divider {
+  height: 1px;
+  background: #d4d8dd;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+// Contact Item Styles
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 0.4px solid #d4d8dd;
+  border-radius: 10px;
+  padding: 0 16px;
+  min-height: 50px;
+  transition: opacity 0.2s ease;
+
+  &.inactive {
+    opacity: 0.5;
+  }
+}
+
+.contactValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: #212529;
+}
+
+.contactActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.priorityTag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: 22px;
+}
+
+.switch :global(.ant-switch-checked) {
+  background-color: #2d6cdf;
+}
+
+// Address Item Styles
+.addressList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addressItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 0.4px solid #d4d8dd;
+  border-radius: 10px;
+  padding: 14px 16px;
+  min-height: 50px;
+  transition: opacity 0.2s ease;
+
+  &.inactive {
+    opacity: 0.5;
+  }
+}
+
+.addressContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.addressValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: #212529;
+  word-break: break-word;
+}
+
+.addressActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.actionButton {
+  padding: 4px 8px;
+  min-width: unset;
+  height: auto;
+
+  :global(.anticon) {
+    font-size: 14px;
+  }
+}
+
+.emptyState {
+  font-size: 14px;
+  color: #6c757d;
+  font-style: italic;
+  padding: 16px;
+  text-align: center;
+}
+
+// Language Item Styles
+.languageList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.languageItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 0.4px solid #d4d8dd;
+  border-radius: 10px;
+  padding: 14px 16px;
+  min-height: 50px;
+  transition: opacity 0.2s ease;
+
+  &.inactive {
+    opacity: 0.5;
+  }
+}
+
+.languageName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #212529;
+}
+
+.languageActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.proficiencyTag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: 12px;
+  background: rgba(108, 117, 125, 0.05);
+  border: 0.4px solid #d4d8dd;
+  color: #6c757d;
+}
+
+// Skill Item Styles
+.skillList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 0.4px solid #d4d8dd;
+  border-radius: 10px;
+  padding: 14px 16px;
+  min-height: 50px;
+  transition: opacity 0.2s ease;
+
+  &.inactive {
+    opacity: 0.5;
+  }
+}
+
+.skillName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #212529;
+}
+
+.skillActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.levelTag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: 12px;
+  background: rgba(108, 117, 125, 0.05);
+  border: 0.4px solid #d4d8dd;
+  color: #6c757d;
+}
+
+// Schedule Modal Styles
+.scheduleModalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.shiftRatesSection {
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #d4d8dd;
+}
+
+.customRatesInputs {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+// Schedule Display Styles
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.scheduleInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+
+  .label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6c757d;
+  }
+
+  .value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #212529;
+  }
+}
+
+.subTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #212529;
+  margin: 16px 0 12px 0;
+}
+
+.weeklySchedule {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.scheduleItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 0.4px solid #d4d8dd;
+  border-radius: 10px;
+  padding: 14px 16px;
+  min-height: 50px;
+  width: 100%;
+}
+
+.dayName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #212529;
+}
+
+.scheduleTag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: 12px;
+}

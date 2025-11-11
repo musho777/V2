@@ -1,0 +1,52 @@
+.uploadWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary, #000);
+    text-align: left;
+  }
+
+  .upload {
+    // Custom upload styles
+  }
+
+  .dragger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .uploadIcon {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .uploadTitle {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 175%;
+    letter-spacing: 0.15px;
+    color: rgba(0, 0, 0, 0.87);
+    margin: 0;
+  }
+
+  .uploadContent {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 175%;
+    letter-spacing: 0.15px;
+    text-align: center;
+    color: rgba(108, 117, 125, 1);
+    margin: 0;
+  }
+}

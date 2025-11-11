@@ -1,0 +1,22 @@
+services:
+  # Development version with hot reload
+  app:
+    image: node:18-alpine
+    container_name: crm-app-dev
+    working_dir: /app
+    command: sh -c "yarn install && yarn dev"
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - crm-network
+
+networks:
+  crm-network:
+    driver: bridge

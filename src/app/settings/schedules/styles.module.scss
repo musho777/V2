@@ -1,0 +1,63 @@
+.pageContainer {
+  height: 100%;
+  background-color: #f8f9fa;
+}
+
+.filterSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.searchInput {
+  background-color: #fefefe;
+  border: 0.8px solid #d4d8dd;
+}
+
+.addButton {
+  height: 40px;
+  padding: 11px 25px;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 360px);
+  gap: 20px;
+  justify-content: start;
+}
+
+.loadingMessage {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #6c757d;
+}
+
+.emptyMessage {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Nunito', sans-serif;
+  color: #6c757d;
+
+  p {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+
+    &:first-child {
+      font-weight: 600;
+      color: #212529;
+    }
+  }
+}
+
+.emptyTab {
+  padding: 40px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #6c757d;
+}

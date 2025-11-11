@@ -1,0 +1,162 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll;
+  width: 100%;
+  box-sizing: border-box;
+  @media (min-width: 1400px) {
+    width: 600px;
+  }
+}
+
+.header {
+  padding: 0 20px;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #dfdfdf;
+  padding-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #212529;
+}
+
+.filterButton {
+  cursor: pointer;
+}
+
+.scrollContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 20px;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+
+    &:hover {
+      background: #555;
+    }
+  }
+
+  mask-image: linear-gradient(#000, #000);
+  -webkit-mask-image: linear-gradient(#000, #000);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.changesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.changeItem {
+  display: flex;
+  gap: 5px;
+  align-items: flex-start;
+}
+
+.changeContent {
+  display: inline;
+  flex: 1;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.changeType {
+  font-size: 12px;
+  font-weight: 600;
+  color: #212529;
+}
+
+.changeAction {
+  font-size: 12px;
+  font-weight: 600;
+  color: #212529;
+}
+
+.changeValue {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.comment {
+  border-radius: 20px;
+  border: 1px solid #d4d8dd;
+  background: #fbfcff;
+  width: 100%;
+  padding: 10px 16px;
+  color: #212529;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  word-break: break-word;
+}
+
+.metadata {
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 170px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f1f1;
+  color: #6c757d;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.metadataText {
+  margin-left: 4px;
+  font-size: 10px;
+  font-weight: 400;
+  color: #6c757d;
+}
+
+.dropdown {
+  width: 152px;
+  border-radius: 10px;
+  padding: 5px;
+  background: white;
+  box-shadow: 0px 4px 35px 9px rgba(0, 0, 0, 0.12);
+  position: absolute;
+  top: 212px;
+  right: 19px;
+  list-style: none;
+  color: #1d3557;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.dropdownItem {
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background: #f0f0f0;
+  }
+}

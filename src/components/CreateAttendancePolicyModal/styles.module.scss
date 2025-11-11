@@ -1,0 +1,46 @@
+.modalHeader {
+  margin-bottom: 20px;
+}
+
+.modalTitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #212529;
+  margin: 0 0 8px 0;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.characterCount {
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6c757d;
+  margin: -10px 0 0 0;
+  text-align: right;
+}
+
+.modalFooter {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.modalButton {
+  width: 184px;
+  height: 44px;
+}
+
+.error {
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #e63946;
+  margin: 4px 0 0 0;
+}

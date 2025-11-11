@@ -1,0 +1,9 @@
+.tableWrapper {
+  :global(.ant-table-wrapper .ant-table-pagination.ant-pagination) {
+    margin: 16px !important;
+  }
+
+  :global(.ant-pagination) {
+    margin: 16px !important;
+  }
+}

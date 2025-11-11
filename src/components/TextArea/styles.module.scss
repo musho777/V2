@@ -1,0 +1,41 @@
+.textAreaWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-family: Nunito, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(33, 37, 41, 1);
+  text-align: left;
+}
+
+.textArea {
+  font-family: Nunito, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(33, 37, 41, 1);
+  resize: none;
+
+  &::placeholder {
+    color: rgba(108, 117, 125, 0.6);
+  }
+
+  &:focus {
+    border-color: rgba(45, 108, 223, 1);
+    box-shadow: 0 0 0 2px rgba(45, 108, 223, 0.1);
+  }
+
+  &:disabled {
+    background-color: rgba(0, 0, 0, 0.04);
+    cursor: not-allowed;
+  }
+}

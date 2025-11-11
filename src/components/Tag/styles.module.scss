@@ -1,0 +1,144 @@
+.tag {
+  font-family: 'Nunito', sans-serif !important;
+  border-radius: 22px !important;
+  padding: 6px 10px !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  line-height: 100% !important;
+  text-align: center !important;
+  border: none !important;
+  display: flex !important;
+  width: max-content !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+// Status-specific tags
+.active {
+  background-color: rgba(21, 199, 167, 0.1) !important;
+  color: rgba(21, 199, 167, 1) !important;
+}
+
+.inactive {
+  background-color: rgba(108, 117, 125, 0.1) !important;
+  color: rgba(108, 117, 125, 1) !important;
+}
+
+.pending {
+  background-color: rgba(250, 161, 28, 0.1) !important;
+  color: rgba(250, 161, 28, 1) !important;
+}
+
+// Blue tags
+.blue {
+  background-color: rgba(45, 108, 223, 1) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.blue-light {
+  background-color: rgba(45, 108, 223, 0.1) !important;
+  color: rgba(45, 108, 223, 1) !important;
+}
+
+// Green tags
+.green {
+  background-color: rgba(39, 174, 96, 1) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.green-light {
+  background-color: rgba(21, 199, 167, 0.1) !important;
+  color: rgba(46, 204, 113, 1) !important;
+}
+
+.success-light {
+  background-color: rgba(46, 204, 113, 0.1) !important;
+  color: rgba(21, 199, 167, 1) !important;
+}
+
+// Red tags
+.red {
+  background-color: rgba(230, 57, 70, 1) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.red-light {
+  background-color: rgba(230, 57, 70, 0.1) !important;
+  color: rgba(230, 57, 70, 1) !important;
+}
+
+// Pink tags
+.pink-light {
+  background-color: rgba(246, 61, 183, 0.1) !important;
+  color: rgba(246, 61, 183, 1) !important;
+}
+
+// Orange tags
+.orange {
+  background-color: rgba(244, 162, 97, 1) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.orange-light {
+  background-color: rgba(244, 162, 97, 0.1) !important;
+  color: rgba(244, 162, 97, 1) !important;
+}
+
+// Yellow tags
+.yellow {
+  background-color: rgba(242, 209, 23, 0.1) !important;
+  color: rgba(242, 209, 23, 1) !important;
+}
+
+.yellow-light {
+  background-color: rgba(255, 214, 0, 0.1) !important;
+  color: rgba(255, 214, 0, 1) !important;
+}
+
+// Purple tags
+.purple {
+  background-color: rgba(115, 103, 240, 1) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.purple-light {
+  background-color: rgba(151, 71, 255, 0.1) !important;
+  color: rgba(151, 71, 255, 1) !important;
+}
+
+// Grey tags
+.grey {
+  background-color: rgba(189, 189, 189, 1) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.grey-light {
+  background-color: rgba(79, 79, 79, 1) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+// Span tags (solid background with white text)
+.blue-span {
+  background-color: transparent !important;
+  color: rgba(45, 108, 223, 1) !important;
+}
+
+.red-span {
+  background-color: transparent !important;
+  color: rgba(230, 57, 70, 1) !important;
+}
+
+.pink-span {
+  background-color: transparent !important;
+  color: rgba(246, 61, 183, 1) !important;
+}
+
+.green-span {
+  background-color: transparent !important;
+  color: rgba(21, 199, 167, 1) !important;
+}
+
+.orange-span {
+  background-color: transparent !important;
+  color: rgba(255, 106, 0, 1) !important;
+}

@@ -1,0 +1,76 @@
+.styledCard {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 16px 20px 0 16px;
+  width: 100%;
+  border-radius: 10px;
+  height: 150px;
+  background: #fff;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.projectName {
+  color: #212529;
+  font-size: 16px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.ownerLabel {
+  color: #6c757d;
+  font-size: 14px;
+  margin: 0;
+  margin-right: 5px;
+}
+
+.owner {
+  color: #212529;
+  font-size: 14px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.ticketCount {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  width: 100%;
+  border-top: 0.5px solid #dfdfdf;
+  padding: 16px 0;
+}
+
+.count {
+  color: #212529;
+  font-size: 16px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.label {
+  font-size: 14px;
+  color: #9ca3af;
+  font-weight: 500;
+}

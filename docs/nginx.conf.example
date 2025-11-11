@@ -1,0 +1,111 @@
+# Nginx configuration for microfrontend routing
+events {
+    worker_connections 1024;
+}
+
+http {
+    upstream main_app {
+        server main-app:3000;
+    }
+
+    upstream dashboard_module {
+        server dashboard-module:3001;
+    }
+
+    upstream sales_module {
+        server sales-module:3002;
+    }
+
+    upstream projects_module {
+        server projects-module:3003;
+    }
+
+    upstream reports_module {
+        server reports-module:3004;
+    }
+
+    upstream users_module {
+        server users-module:3005;
+    }
+
+    # Main application
+    server {
+        listen 80;
+        server_name localhost;
+
+        # Root
+        location / {
+            proxy_pass http://main_app;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+
+        # Dashboard module
+        location /dashboard {
+            proxy_pass http://dashboard_module;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+
+        # Sales module
+        location /sales {
+            proxy_pass http://sales_module;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+
+        # Projects module
+        location /projects {
+            proxy_pass http://projects_module;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+
+        # Reports module
+        location /reports {
+            proxy_pass http://reports_module;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+
+        # Users module
+        location /users {
+            proxy_pass http://users_module;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+
+        # API Gateway (if separate)
+        location /api {
+            proxy_pass http://api:8080;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+
+        # Health check
+        location /health {
+            access_log off;
+            return 200 "healthy\n";
+            add_header Content-Type text/plain;
+        }
+    }
+
+    # HTTPS configuration (uncomment and configure SSL)
+    # server {
+    #     listen 443 ssl http2;
+    #     server_name yourdomain.com;
+    #
+    #     ssl_certificate /etc/nginx/ssl/cert.pem;
+    #     ssl_certificate_key /etc/nginx/ssl/key.pem;
+    #
+    #     location / {
+    #         proxy_pass http://main_app;
+    #         proxy_set_header Host $host;
+    #         proxy_set_header X-Real-IP $remote_addr;
+    #         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    #         proxy_set_header X-Forwarded-Proto $scheme;
+    #     }
+    # }
+}

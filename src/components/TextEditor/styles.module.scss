@@ -1,0 +1,28 @@
+.textEditorContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-family: Nunito, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: rgba(33, 37, 41, 1);
+  text-align: left;
+}
+
+.error {
+  font-family: Nunito, sans-serif;
+  color: #e63946;
+  font-weight: 600;
+  padding: 3px 0 2px 0;
+  display: flex;
+  gap: 3px;
+  justify-content: start;
+  font-size: 12px;
+  line-height: 12px;
+}

@@ -1,0 +1,139 @@
+version: '3.8'
+
+services:
+  # Main application
+  main-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crm-main
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+      - API_URL=http://api:8080
+    depends_on:
+      - redis
+    networks:
+      - crm-network
+    restart: unless-stopped
+
+  # Dashboard Module (can be separate container)
+  dashboard-module:
+    build:
+      context: .
+      dockerfile: Dockerfile.dashboard
+    container_name: crm-dashboard
+    ports:
+      - '3001:3001'
+    environment:
+      - NODE_ENV=production
+      - MODULE_NAME=dashboard
+      - MAIN_APP_URL=http://main-app:3000
+    networks:
+      - crm-network
+    restart: unless-stopped
+
+  # Sales Module
+  sales-module:
+    build:
+      context: .
+      dockerfile: Dockerfile.sales
+    container_name: crm-sales
+    ports:
+      - '3002:3002'
+    environment:
+      - NODE_ENV=production
+      - MODULE_NAME=sales
+      - MAIN_APP_URL=http://main-app:3000
+    networks:
+      - crm-network
+    restart: unless-stopped
+
+  # Projects Module
+  projects-module:
+    build:
+      context: .
+      dockerfile: Dockerfile.projects
+    container_name: crm-projects
+    ports:
+      - '3003:3003'
+    environment:
+      - NODE_ENV=production
+      - MODULE_NAME=projects
+      - MAIN_APP_URL=http://main-app:3000
+    networks:
+      - crm-network
+    restart: unless-stopped
+
+  # Reports Module
+  reports-module:
+    build:
+      context: .
+      dockerfile: Dockerfile.reports
+    container_name: crm-reports
+    ports:
+      - '3004:3004'
+    environment:
+      - NODE_ENV=production
+      - MODULE_NAME=reports
+      - MAIN_APP_URL=http://main-app:3000
+    networks:
+      - crm-network
+    restart: unless-stopped
+
+  # User Management Module
+  users-module:
+    build:
+      context: .
+      dockerfile: Dockerfile.users
+    container_name: crm-users
+    ports:
+      - '3005:3005'
+    environment:
+      - NODE_ENV=production
+      - MODULE_NAME=users
+      - MAIN_APP_URL=http://main-app:3000
+    networks:
+      - crm-network
+    restart: unless-stopped
+
+  # Redis for session/cache
+  redis:
+    image: redis:alpine
+    container_name: crm-redis
+    ports:
+      - '6379:6379'
+    networks:
+      - crm-network
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+
+  # Nginx as reverse proxy and load balancer
+  nginx:
+    image: nginx:alpine
+    container_name: crm-nginx
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - main-app
+      - dashboard-module
+      - sales-module
+      - projects-module
+      - reports-module
+      - users-module
+    networks:
+      - crm-network
+    restart: unless-stopped
+
+networks:
+  crm-network:
+    driver: bridge
+
+volumes:
+  redis-data:

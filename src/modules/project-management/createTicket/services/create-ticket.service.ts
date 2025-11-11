@@ -199,11 +199,14 @@ export const createTicketService = {
         formData.append('attachments', file);
       });
     }
-
+    const params = data.removedAttachmentIds?.length
+      ? { removedAttachmentIds: data.removedAttachmentIds }
+      : {};
     await httpClient.put(`${BASE_URL}/pm/ticket/${ticketId}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
+      params,
     });
   },
 };

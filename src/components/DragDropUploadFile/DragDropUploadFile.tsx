@@ -23,6 +23,7 @@ interface DragDropUploadFileProps {
 
 export const DragDropUploadFile: React.FC<DragDropUploadFileProps> = ({
   onChange,
+  onRemove,
   defaultFileList = [],
 }) => {
   const [previewOpen, setPreviewOpen] = useState(false);
@@ -68,6 +69,7 @@ export const DragDropUploadFile: React.FC<DragDropUploadFileProps> = ({
           void handlePreview(file);
         }}
         onChange={handleChange}
+        onRemove={onRemove}
         customRequest={({ onSuccess }) => {
           void (async () => {
             await new Promise((resolve) => setTimeout(resolve, 0));

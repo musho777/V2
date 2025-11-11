@@ -55,6 +55,7 @@ export default function CreateTicket() {
   const [shouldGetParentTasks, setShouldGetParentTasks] = useState(false);
   const [addAppointment, setAddAppointment] = useState(false);
   const [attachments, setAttachments] = useState<File[]>([]);
+  const [removeFiles, setRemoveFiles] = useState([]);
   const [existingAttachments, setExistingAttachments] = useState<UploadFile[]>(
     [],
   );
@@ -144,6 +145,12 @@ export default function CreateTicket() {
     shouldGetParentTasks,
     parentTaskIdOrTitle,
   );
+
+  const handleRemove = (files) => {
+    const item = [...removeFiles];
+    item.push(files.uid);
+    setRemoveFiles(item);
+  };
 
   useEffect(() => {
     if (isEditMode && ticketData) {
@@ -320,10 +327,10 @@ export default function CreateTicket() {
                     ? Number(values.estimatedTimeMinutes)
                     : undefined,
                 assigneeUserIds: values.assignee,
+                removedAttachmentIds: removeFiles,
                 watcherIds: values.watchers,
                 attachments,
               };
-
               if (isEditMode && ticketId) {
                 updateTicket({ ticketId, data: ticketPayload });
               } else {
@@ -722,6 +729,7 @@ export default function CreateTicket() {
                       <Row>
                         <DragDropUploadFile
                           onChange={(files) => setAttachments(files)}
+                          onRemove={(files) => handleRemove(files)}
                           defaultFileList={existingAttachments}
                         />
                       </Row>

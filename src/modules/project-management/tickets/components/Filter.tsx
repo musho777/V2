@@ -269,7 +269,7 @@ export default function Filter() {
                   router.push('/project-management/create-ticket');
                 }}
               >
-                + Create Button
+                + Create Ticket
               </Button>
             </Col>
           </Row>

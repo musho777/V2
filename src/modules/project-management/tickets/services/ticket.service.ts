@@ -21,6 +21,7 @@ export interface TicketsQueryParams {
   priorityIds?: number[];
   subprojectIds?: number[];
   assigneeUserIds?: number[];
+  connectionFilters?: string[];
   createdByIds?: number[];
   createdDateFrom?: string;
   createdDateTo?: string;
@@ -112,6 +113,13 @@ export const ticketService = {
 
     if (params?.title) {
       queryParams.append('title', params.title);
+    }
+    console.log(params.connectionFilters);
+    if (params?.connectionFilters && params?.connectionFilters.length) {
+      params.connectionFilters.forEach((id) => {
+        console.log(id, 'is');
+        queryParams.append('connectionFilters', id);
+      });
     }
 
     if (params?.status) {

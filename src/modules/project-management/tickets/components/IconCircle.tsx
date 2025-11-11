@@ -9,6 +9,7 @@ interface IconCircleProps {
   textColor?: string;
   bgColor?: string;
   badge?: number;
+  onClick?: () => void;
 }
 
 export const IconCircle: React.FC<IconCircleProps> = ({
@@ -17,11 +18,10 @@ export const IconCircle: React.FC<IconCircleProps> = ({
   borderColor = 'rgb(45, 108, 223,1)',
   bgColor,
   badge,
+  onClick,
 }) => {
-  const [isHovered, setIsHovered] = React.useState(false);
-
   const getBgColor = () => {
-    if (!active && !isHovered) return 'transparent';
+    if (!active) return 'transparent';
     if (bgColor) return bgColor;
     const rgbMatch = borderColor.match(/rgb\((\d+),\s*(\d+),\s*(\d+)/);
     if (rgbMatch) {
@@ -30,10 +30,10 @@ export const IconCircle: React.FC<IconCircleProps> = ({
     return 'rgba(0, 123, 255, 0.1)';
   };
 
-  const isActiveState = active || isHovered;
+  const isActiveState = active;
 
   const clonedIcon =
-    React.isValidElement(icon) && isHovered
+    React.isValidElement(icon) && isActiveState
       ? React.cloneElement(icon as React.ReactElement<{ active?: boolean }>, {
           active: true,
         })
@@ -47,9 +47,9 @@ export const IconCircle: React.FC<IconCircleProps> = ({
           borderColor: isActiveState ? borderColor : 'rgb(212, 216, 221)',
           backgroundColor: getBgColor(),
           color: isActiveState ? borderColor : 'rgb(33, 37, 41)',
+          cursor: onClick ? 'pointer' : 'default',
         }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onClick={onClick}
       >
         {clonedIcon}
       </div>

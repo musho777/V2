@@ -36,6 +36,7 @@ export default function TicketsPage() {
     priorityIds: searchData.priorityIds,
     subprojectIds: searchData.subprojectIds,
     assigneeUserIds: searchData.assigneeUserIds,
+    connectionFilters: searchData.connectionFilters,
     createdByIds: searchData.createdByIds,
     createdDateFrom: searchData.createdDateFrom,
     createdDateTo: searchData.createdDateTo,

@@ -24,6 +24,7 @@ export interface TicketSearchData {
   statusIds?: number[];
   priorityIds?: number[];
   assigneeUserIds?: number[];
+  connectionFilters?: string[];
   createdByIds?: number[];
   assignmentFilter?: AssignmentFilterType;
   search?: string;
@@ -51,6 +52,7 @@ export const useTicketSearchParams = () => {
     statusIds: [],
     priorityIds: [],
     assigneeUserIds: [],
+    connectionFilters: '',
     createdByIds: [],
   };
 
@@ -62,6 +64,10 @@ export const useTicketSearchParams = () => {
   const getNumberArray = (key: string): number[] => {
     const vals = searchParams.getAll(key);
     return vals.map((val) => Number(val)).filter((num) => !isNaN(num));
+  };
+  const getStringArray = (key: string): string[] => {
+    const vals = searchParams.getAll(key);
+    return vals.filter((val) => val.trim() !== '');
   };
 
   const searchData = useMemo(
@@ -78,6 +84,8 @@ export const useTicketSearchParams = () => {
       statusIds: getNumberArray('statusIds'),
       priorityIds: getNumberArray('priorityIds'),
       assigneeUserIds: getNumberArray('assigneeUserIds'),
+      connectionFilters: getStringArray('connectionFilters'),
+
       createdByIds: getNumberArray('createdByIds'),
       assignmentFilter: getString('assignmentFilter') as
         | AssignmentFilterType

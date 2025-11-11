@@ -62,6 +62,7 @@ export default function Filter() {
     shouldGetProjects,
     projectSearchQuery,
   );
+  console.log(searchData);
 
   const { data: subprojects, isLoading: isSubprojectLoading } =
     useEnabledSubprojects(
@@ -147,6 +148,18 @@ export default function Filter() {
       }
     };
 
+  const handleSelectAssign = (e: string) => {
+    const filters = [...searchData.connectionFilters];
+    const index = filters.indexOf(e);
+
+    if (index !== -1) {
+      filters.splice(index, 1);
+    } else {
+      filters.push(e);
+    }
+
+    setTicketSearchData({ connectionFilters: filters });
+  };
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -164,6 +177,7 @@ export default function Filter() {
     if (first) setTicketSearchData({ search: debouncedSearchText });
   }, [debouncedSearchText]);
 
+  console.log(searchData.connectionFilters.includes('USER'));
   return (
     <div className="flex flex-col gap-4 w-full">
       <div className="flex justify-between w-full">
@@ -281,31 +295,54 @@ export default function Filter() {
         >
           <div className={styles.filterItem}>
             <IconCircle
-              active={false}
+              active={searchData.connectionFilters.includes('USER')}
               icon={<UserIcon />}
               badge={counts?.assignedToMe}
+              onClick={() => handleSelectAssign('USER')}
             />
             <div className={styles.line} />
             <IconCircle
               borderColor="rgb(255, 106, 0)"
+              active={searchData.connectionFilters.includes(
+                'USER_WITH_NEW_UPDATES',
+              )}
+              onClick={() => handleSelectAssign('USER_WITH_NEW_UPDATES')}
               icon={<p className="text-[11px] font-semibold">New</p>}
               badge={counts?.assignedToMeNew}
             />
           </div>
           <div className={styles.filterItem}>
-            <IconCircle icon={<UsersIcon />} badge={counts?.assignedToMyTeam} />
+            <IconCircle
+              active={searchData.connectionFilters.includes('TEAM')}
+              onClick={() => handleSelectAssign('TEAM')}
+              icon={<UsersIcon />}
+              badge={counts?.assignedToMyTeam}
+            />
             <div className={styles.line} />
             <IconCircle
               borderColor="rgb(255, 106, 0)"
+              active={searchData.connectionFilters.includes(
+                'TEAM_WITH_NEW_UPDATES',
+              )}
+              onClick={() => handleSelectAssign('TEAM_WITH_NEW_UPDATES')}
               icon={<p className="text-[11px] font-semibold">New</p>}
               badge={counts?.assignedToMyTeamNew}
             />
           </div>
           <div className={styles.filterItem}>
-            <IconCircle icon={<WatchIcon />} badge={counts?.watcher} />
+            <IconCircle
+              active={searchData.connectionFilters.includes('WATCHER')}
+              onClick={() => handleSelectAssign('WATCHER')}
+              icon={<WatchIcon />}
+              badge={counts?.watcher}
+            />
             <div className={styles.line} />
             <IconCircle
               borderColor="rgb(255, 106, 0)"
+              active={searchData.connectionFilters.includes(
+                'WATCHER_WITH_NEW_UPDATES',
+              )}
+              onClick={() => handleSelectAssign('WATCHER_WITH_NEW_UPDATES')}
               badge={counts?.watcherNew}
               icon={<p className="text-[11px] font-semibold">New</p>}
             />
